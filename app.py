@@ -345,7 +345,7 @@ with tabs[2]:
             discount_number = int(selected_discount.replace("٪", "").translate(
                 str.maketrans("۰۱۲۳۴۵۶۷۸۹", "0123456789")
             ))
-            chosen_scenario = result[result["تخفیف"] == selected_discount].iloc[0]
+            chosen_scenario = result[result["تخفیف"] == f"{discount_number}٪"].iloc[0]
             st.session_state.decision_log.append({
                 "فروشگاه": selected_store,
                 "دسته‌بندی": selected_category,
